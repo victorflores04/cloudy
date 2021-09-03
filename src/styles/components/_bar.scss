@@ -1,0 +1,60 @@
+.bar {
+  &__section {
+    padding-top: $top-bar-vertical-padding;
+    padding-bottom: $top-bar-vertical-padding;
+
+    &--header {
+      background-color: get-color(top-bar-background);
+      color: get-color(top-bar-text);
+    }
+
+    &--body {
+      background-color: get-color(black);
+      color: get-color(primary);
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+  &__paragraph {
+    text-transform: uppercase;
+    text-align: center;
+
+    &--left {
+      @media (min-width: get-breakpoint(sm)) {
+        text-align: left;
+      }
+    }
+
+    &--main {
+      @media (min-width: get-breakpoint(sm)) {
+        text-align: center;
+      }
+    }
+
+    &--right {
+      @media (min-width: get-breakpoint(sm)) {
+        text-align: right;
+      }
+    }
+  }
+
+  &--success {
+    background-color: get-color(white);
+    color: get-color(primary);
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  &--status {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+  }
+
+  &--hidden {
+    display: none;
+  }
+}

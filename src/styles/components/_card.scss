@@ -1,0 +1,51 @@
+.card {
+  box-shadow: 0 0 18px 1px get-color(card-shadow);
+  border-radius: $card-border-radius;
+
+  &__container {
+    padding: 15px 31px;
+  }
+
+  &__header-top {
+    position: relative;
+    text-align: center;
+    img {
+      display: inline-block;
+    }
+
+    &:before{
+      content: "";
+      width: 55px;
+      height: 55px;
+      background-image: url(https://cdn.shopify.com/s/files/1/0536/8348/6903/files/quotation-marks.png?v=1611959478);
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      left: 0;
+
+    }
+  }
+
+  &__header {
+    margin-bottom: 20px;
+    line-height: 1;
+  }
+
+  &__content {
+    margin: 8px 0;
+  }
+
+  &__footer {
+    margin: 16px 0;
+  }
+
+  &--review {
+    max-width: 258px;
+    
+    margin: 7px auto;
+
+    @include media-query(sm) {
+      max-width: none;
+    }
+  }
+}

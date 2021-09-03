@@ -1,0 +1,98 @@
+.product-information {
+  $this: &;
+
+  margin-top: -40px;
+  margin-bottom: 60px;
+
+  @include media-query(sm) {
+    margin-top: -80px;
+  }
+
+  &__tab {
+    padding: 0 15px;
+  }
+
+  &__text {
+    color: get-color(primary);
+    font-size: font-size-heading(17px);
+    font-weight: bold;
+    text-align: left;
+    
+    @include media-query(sm) {
+      text-align: center;
+    }
+  }
+
+  &__input {
+    &--show-more {
+      display: none;
+
+      &:checked {
+        & + #{$this}__description--show-more {
+          max-height: none;
+          -webkit-mask-image: none;
+        }
+
+        & + #{$this}__description--show-more + #{$this}__label--show-more {
+          &:before {
+            content: "Show less";
+          }
+
+          &:after {
+            height: 20px;
+            transform: rotate(0);
+          }
+        }
+      }
+    }
+  }
+
+  &__description {
+    margin: 2px 0;
+    font-size: font-size(17px);
+    line-height: 2;
+
+    @include media-query(sm) {
+      background-color: initial;
+      padding: 36px 0 16px 0;
+    }
+
+    &--show-more {
+      display: block;
+      max-height: 200px;
+      -webkit-mask-image: linear-gradient(get-color(white), get-color(white), transparent);
+
+      @include media-query(sm) {
+        max-height: 170px;
+      }
+    }
+  }
+
+  &__label {
+    &--show-more {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      font-size: font-size(15px);
+      font-weight: bold;
+      padding: 15px 5px;
+      color: get-color(purple-custom);
+
+      &:before {
+        content: 'Show more';
+        margin-right: 2px;
+      }
+
+      &:after {
+        content: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' %3E%3Cpath fill='%23381177' d='M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z'%3E%3C/path%3E%3C/svg%3E");
+        width: 23px;
+        height: 25px;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__video-inner {
+    margin: 25px 0;
+  }
+}

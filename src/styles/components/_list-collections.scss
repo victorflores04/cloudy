@@ -1,0 +1,26 @@
+.list-collections{
+  &__collection {
+    background: get-color(background-pale);
+    min-height: 150px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    strong {
+      font-size: font-size(15px);
+      @include media-query(sm) {
+        font-size: font-size(35px);
+      }
+    }
+
+    @include media-query(sm) {
+      min-height: 300px;
+    }
+  }
+
+  &__quantity {
+    display: block;
+    text-align: center;
+  }
+}

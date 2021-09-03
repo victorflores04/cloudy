@@ -1,0 +1,43 @@
+.community-video {
+  &__section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    height: 100%;
+
+    & > * {
+      max-width: 425px;
+    }
+  }
+
+  &__content {
+    padding: 20px 0;
+
+    @include media-query(sm) {
+      padding: 0;
+    }
+  }
+
+  &__subheading {
+    text-align: center;
+  }
+
+  &__cta {
+    margin-top: 15px;
+  }
+
+  &__image {
+    margin-top: 44px;
+
+    @include media-query(sm) {
+      margin-top: 0;
+    }
+  }
+  &__form {
+    margin-top: 15px;
+    width: 100%;
+    max-width: 350px;
+  }
+}

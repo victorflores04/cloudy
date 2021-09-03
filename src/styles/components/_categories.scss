@@ -1,0 +1,20 @@
+.categories {
+  &__grid {
+    margin-top: 35px;
+
+    @include media-query(sm) {
+      margin-top: 70px;
+    }
+  }
+
+  &__image {
+    @include media-query(sm){
+      box-shadow: 0 0 18px 1px get-color(card-shadow);
+      border-radius: $card-border-radius;
+      transition: all 500ms;
+      &:hover {
+        box-shadow: 0 0 18px 1px get-color(card-shadow-hover);
+      }
+    }
+  }
+}

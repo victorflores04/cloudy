@@ -1,0 +1,117 @@
+// FIXME: Remove
+#shopify-section-1555680797132 {
+  margin-top: 0;
+}
+
+.hero {
+  $this: &;
+
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__content {
+    position: relative;
+
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 96px;
+    padding-bottom: 100px;
+
+    @include media-query(sm) {
+      padding-top: 185px;
+      padding-bottom: 50px;
+    }
+  }
+
+  &__heading {
+    color: get-color(white);
+    font-size: font-size-heading(35px);
+    position: relative;
+    display: inline-block;
+
+    &--underline {
+      padding-bottom: 25px;
+
+      &:after {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: -15px;
+        width: 100%;
+        height: 12px;
+        background: linear-gradient(90deg, get-color(secondary) 20%, get-color(button-primary-background) 80%);
+      }
+    }
+
+    @include media-query(sm) {
+      max-width: none;
+      font-size: font-size-heading(55px);
+    }
+  }
+
+  &__subheading {
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+
+    max-width: 560px;
+
+    color: get-color(text-bright);
+    font-size: font-size(50px);
+    line-height: 1.7em;
+    font-weight: bold;
+
+    @include media-query(sm) {
+      margin-top: 40px;
+    }
+  }
+
+  &__cta-container {
+    display: flex;
+
+    flex-wrap: wrap;
+    justify-content: center;
+
+    margin-top: 25px;
+    margin-right: -10px;
+    margin-left: -10px;
+
+    @include media-query(sm) {
+      margin-top: 45px;
+    }
+  }
+
+  &__cta {
+    margin-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  &--spacing-small {
+    #{$this}__content {
+      padding-top: 56px;
+      padding-bottom: 60px;
+
+      @include media-query(sm) {
+        padding-top: 96px;
+        padding-bottom: 100px;
+      }
+    }
+  }
+
+  &--shift-top {
+    margin-top: -($header-height);
+    padding-top: $header-height - 50px;
+
+    @include media-query(sm) {
+      margin-top: -($header-height-sm);
+      padding-top: $header-height-sm - 50px;
+    }
+  }
+}

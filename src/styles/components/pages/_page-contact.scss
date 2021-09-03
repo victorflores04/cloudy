@@ -1,0 +1,49 @@
+.page-contact {
+  &__heading {
+    text-align: center;
+    font-size: font-size(42px);
+    color: get-color(text);
+  }
+
+  &__subheading {
+    text-align: center;
+    font-size: font-size(25px);
+    margin-bottom: 45px;
+  }
+
+  &__link {
+    text-align: center;
+    color: get-color(text);
+    font-size: font-size(20px);
+    font-weight: bold;
+    display: inline-block;
+  }
+
+  &__icon {
+    display: block;
+    text-align: center;
+
+    svg {
+      display: inline-block;
+      width: 90px;
+      height: 90px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__options {
+    & > * {
+      gap: 95px;
+
+      & > div:first-child {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      & > div:last-child {
+        display: flex;
+        justify-content: flex-start;
+      }
+    }
+  }
+}

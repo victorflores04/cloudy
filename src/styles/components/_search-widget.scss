@@ -1,0 +1,83 @@
+.search-widget {
+  $this: &;
+  position: relative;
+  svg {
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__input {
+    width: 100%;
+    background: get-color(white);
+    border-radius: $input-border-radius;
+  }
+
+  &__form {
+    display: flex;
+    border-radius: 4px;
+    width: 100%;
+    gap: 10px;
+    position: relative;
+    box-shadow: 0 0 2px rgba(get-color(black), 0.30);
+
+    &:before {
+      position: absolute;
+      top: -11px;
+      right: 0;
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 0 solid transparent;
+      border-bottom: 15px solid darken(get-color(white), 4%);
+      opacity: 0;
+      transition: none;
+    }
+  }
+
+
+  &--desktop {
+
+    #{$this}__form {
+      background: darken(get-color(white), 4%);
+      padding: 11px;
+      display: flex;
+      border-radius: 4px;
+      width: 305px;
+      gap: 10px;
+      position: relative;
+      box-shadow: 0 0 2px rgba(get-color(black), 0.30);
+    }
+
+    #{$this}__inner {
+      position: absolute;
+      right: -23px;
+      top: 0;
+      padding: 35px 30px 30px 30px;
+      //display: none;
+      height: 0;
+      width: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: 0;
+    }
+
+
+    &:hover {
+      #{$this}__inner {
+        height: auto;
+        width: auto;
+        opacity: 1;
+        overflow: inherit;
+        transition: all 0.5s;
+        #{$this}__form {
+          &:before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+}

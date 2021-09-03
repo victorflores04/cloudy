@@ -1,0 +1,34 @@
+.donate {
+  position: relative;
+
+  overflow: hidden;
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  &__info {
+    text-align: center;
+
+    @include media-query(sm) {
+      margin-right: $gutter-sm;
+      text-align: left;
+    }
+  }
+
+  &__header {
+    margin-bottom: 20px;
+  }
+
+  &__form-container {
+    margin-top: 32px;
+
+    @include media-query(md) {
+      margin-top: 0;
+    }
+  }
+}

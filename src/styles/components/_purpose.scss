@@ -1,0 +1,40 @@
+.purpose {
+  margin-top: -40px;
+  padding: 15px 0 35px;
+
+  background-color: get-color(gray-custom);
+
+  @include media-query(sm) {
+    margin-top: -70px;
+    padding: 40px 0 65px;
+  }
+
+  &__text {
+    color: get-color(text);
+    text-align: center;
+    font-size: font-size(13px);
+
+    &--heading {
+      font-size: font-size(24px);
+
+      @include media-query(sm) {
+        font-size: font-size(35px);
+      }
+    }
+
+    &--content {
+      margin: auto;
+      margin-top: -10px;
+      max-width: 1020px;
+
+      @include media-query(sm) {
+        font-size: font-size(20px);
+        margin-top: 0;
+      }
+
+      & > p + p {
+        margin-top: 15px;
+      }
+    }
+  }
+}

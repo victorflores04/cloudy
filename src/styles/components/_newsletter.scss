@@ -1,0 +1,89 @@
+.newsletter {
+  &__heading {
+    text-align: center;
+  }
+
+  &__description {
+    margin-top: 25px;
+    text-align: center;
+  }
+
+  &__form {
+    margin-top: 30px;
+  }
+
+  &__klaviyo {
+    background: transparent;
+
+    .klaviyo-form-Tiw7tz {
+      background: transparent;
+    }
+
+    .kKQEmZ {
+      display: none;
+    }
+
+    input[type="email"] {
+      cursor: text !important;
+      border: $input-border !important;
+      border-radius: $button-border-radius !important;
+      outline:none;
+      height: 42px !important;
+      font-family: $input-font-family !important;
+      font-size: font-size(14px) !important;
+      line-height: $input-line-height !important;
+      background-color: get-color(white);
+      padding: 0px 16px !important;
+      text-align: center  !important;
+      &:focus {
+        box-shadow: none !important;
+        cursor: text !important;
+      }
+
+    }
+
+    button[type="button"] {
+      font-size: font-size(14px) !important;
+      font-weight: $font-weight-heading !important;
+      font-family: $font-family-base !important;
+
+      border-radius: $button-border-radius !important;
+      background: linear-gradient(90deg, get-color(secondary) 0%, get-color(button-primary-background) 100%) !important;
+
+      color: get-color(button-primary-text) !important;
+
+      border: none;
+      padding: 14px 30px !important;
+      margin: 20px auto 0 auto;
+
+      &:hover {
+        background-color: get-color(button-primary-background);
+        color: get-color(button-primary-text);
+      }
+    }
+
+    &--small {
+      input[type="email"] {
+        border-radius: $button-border-radius 0 0 $button-border-radius !important;
+        border: 0 !important;
+        padding: 0px 30px 0px 16px !important;
+        text-align: left !important;
+      }
+      button[type="button"] {
+        margin-top: 0;
+        margin-left: -25px;
+      }
+
+      .ql-editor {
+        color:white !important;
+        p {
+          color:white !important;
+        }
+        padding: 15px !important;
+        background: get-color(success) !important;
+        border-radius: 15px !important;
+      }
+    }
+
+  }
+}
