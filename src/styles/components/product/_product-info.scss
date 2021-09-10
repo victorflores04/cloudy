@@ -1,0 +1,186 @@
+.product-info {
+  $this: &;
+
+  & > * + * {
+    margin-top: 0;
+    @include media-query(sm) {
+      margin-top: 10px;
+    }
+  }
+
+  &__badge {
+    & + #{$this}__title {
+      margin-top: 23px;
+    }
+  }
+
+  &__title {
+    font-size: font-size-heading(26px);
+    color: get-color(text);
+
+    @include media-query(sm) {
+      font-size: font-size-heading(42px);
+    }
+  }
+
+  &__compare {
+    @include font-heading();
+
+    display: inline-block;
+    margin-right: 5px;
+    color: get-color(text-pale2)
+  }
+
+  &__price {
+    @include font-heading();
+
+    margin-top: 3px;
+
+    color: get-color(primary);
+    font-size: font-size(21px);
+
+    display: inline-block;
+
+    @include media-query(sm) {
+      margin-top: 12px;
+    }
+  }
+
+  &__percent {
+    display: inline-block;
+    transform: translateY(-3px);
+    color: get-color(primary);
+    background: rgba(get-color(primary), 0.1);
+    border-radius: 5px;
+    font-size: font-size(13px);
+    font-weight: normal;
+    max-width: 50px;
+    margin-left: 5px;
+    padding: 3px 5px;
+    text-align: center;
+    width: 100%;
+  }
+
+  &__countdown {
+    margin-top: 10px;
+    @include media-query(sm) {
+      margin-top: 15px;
+    }
+  }
+
+  &__description {
+    margin-top: 20px;
+    line-height: $line-height-high;
+
+    font-size: font-size(16px);
+
+    @include media-query(sm) {
+      margin-top: 20px;
+    }
+  }
+
+  &__description-text {
+    &--show-more {
+      display: block;
+      max-height: 185px;
+      -webkit-mask-image: linear-gradient(get-color(white), get-color(white), transparent);
+    }
+  }
+
+  &__label {
+    &--show-more {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      font-size: font-size(15px);
+      font-weight: bold;
+      padding: 15px 5px;
+      color: get-color(purple-custom);
+
+      &:before {
+        content: 'Show more';
+        margin-right: 2px;
+      }
+
+      &:after {
+        content: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' %3E%3Cpath fill='%23381177' d='M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z'%3E%3C/path%3E%3C/svg%3E");
+        width: 23px;
+        height: 25px;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__input {
+    &--show-more {
+      display: none;
+
+      &:checked {
+        & + #{$this}__description-text--show-more {
+          max-height: none;
+          -webkit-mask-image: none;
+        }
+
+        & + #{$this}__description-text--show-more + #{$this}__label--show-more {
+          &:before {
+            content: "Show less";
+          }
+
+          &:after {
+            height: 20px;
+            transform: rotate(0);
+          }
+        }
+      }
+    }
+  }
+
+  &__options {
+    margin-top: 50px;
+    
+    & > * + * {
+      margin-top: 25px;
+    }
+  }
+
+  &__cta {
+    margin-top: 30px;
+    @include media-query(sm) {
+      margin-top: 40px;
+    }
+  }
+
+  &__cta-main {
+    display: flex;
+  }
+
+  &__cta-item {
+    flex: 0 1 auto;
+
+    &--add-to-cart {
+      display: flex;
+      flex: 1 0 auto;
+    }
+  }
+
+  &__error {
+    display: none;
+
+    margin-top: 8px;
+
+    color: get-color(error);
+    text-transform: none;
+    letter-spacing: normal;
+    font-size: $font-size-small;
+
+    &.visible {
+      display: block;
+    }
+  }
+
+  &__additional-info {
+    @include media-query(sm) {
+      margin-top: 60px;
+    }
+  }
+}

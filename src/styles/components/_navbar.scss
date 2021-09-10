@@ -1,0 +1,51 @@
+.navbar {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  color: get-color(text);
+
+  @include media-query(lg) {
+    padding: 24px;
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__background {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 2rem);
+  }
+
+  &__items {
+    height: 40px;
+    position: relative;
+  }
+
+  &__item {
+    flex: 0 0 auto;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    align-items: center;
+    display: flex;
+
+    &--spacer {
+      flex: 1 1 auto;
+      background-color: rgba(0, 0, 0, 0);
+    }
+
+  }
+
+  &__link {
+    display: block;
+    line-height: 2.5;
+    font-weight: $font-weight-base-bold;
+
+    &--logo {
+      width: 100%;
+      max-width: 150px;
+    }
+  }
+}

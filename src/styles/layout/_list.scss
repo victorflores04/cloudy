@@ -1,0 +1,146 @@
+.list {
+  $this: &;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+
+  &__item {
+    flex: 0 1 auto;
+
+    &--expand {
+      display: flex;
+      flex: 1 1 auto;
+    }
+  }
+
+  &--horizontal {
+    flex-direction: row;
+  }
+
+  &--inline {
+    display: inline-flex;
+  }
+
+  &--center {
+    align-items: center;
+  }
+
+  &--justify-center {
+    justify-content: center;
+  }
+
+  &--justify-start\@sm {
+    @include media-query(sm) {
+      justify-content: flex-start;
+    }
+  }
+
+  &--end {
+    justify-content: flex-end;
+  }
+
+  &--ordered {
+    margin-left: 1em;
+    list-style: decimal;
+
+    #{$this}__item {
+      padding-left: 0.2em;
+    }
+  }
+
+  &--filters {
+    #{$this} {
+      &__name {
+        @include font-heading();
+
+        font-size: font-size-heading(14px);
+      }
+
+      &__values {
+        display: flex;
+        flex-wrap: wrap;
+
+        margin: -4px;
+
+        &--vertical {
+          flex-direction: column;
+          flex-wrap: nowrap;
+
+          margin: 0;
+          margin-bottom: 8px;
+        }
+      }
+
+      &__value {
+        flex: 0 0 auto;
+
+        padding: 4px;
+
+        min-width: 64px;
+
+        &--small {
+          font-size: font-size-heading(15px);
+          padding-left: 23px;
+
+          background: url("data:image/svg+xml;charset=utf-8,%3Csvg width='15' height='15' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='none' stroke='%23959595' d='M.5.5h14v14H.5z'/%3E%3C/svg%3E")
+            0/15px 15px no-repeat;
+
+          &.selected {
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='15' height='15' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h15v15H0z'/%3E%3Cpath fill='none' stroke='%23FFF' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' d='M4 8l2 2 5-5'/%3E%3C/svg%3E");
+          }
+        }
+
+        &--color {
+          position: relative;
+          display: flex;
+          align-items: center;
+
+          > * {
+            border-radius: 50%;
+            margin-right: 10px;
+
+            height: 14px;
+            width: 14px;
+
+            &::after {
+              content: ' ';
+              position: absolute;
+              top: 3px;
+              left: -2px;
+
+              border-radius: 50%;
+
+              height: 16px;
+              width: 16px;
+            }
+          }
+
+          &.selected > *::after{
+            border: 1px solid get-color(primary);
+          }
+
+          &.green > * {
+            background-color: green;
+          }
+
+          &.blue > * {
+            background-color: blue;
+          }
+
+          &.red > * {
+            background-color: red;
+          }
+        }
+      }
+    }
+
+    > label {
+      margin: 8px 0;
+    }
+  }
+}

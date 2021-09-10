@@ -1,0 +1,80 @@
+.video-tile {
+  $this: &;
+
+  &:hover {
+    #{$this}__image-overlay {
+      opacity: 1;
+    }
+
+    #{$this}__icon {
+      opacity: 1;
+    }
+
+    #{$this}__title {
+      color: get-color(primary);
+    }
+  }
+
+  &__image-container {
+    position: relative;
+    border-radius: $img-border-radius;
+    overflow: hidden;
+  }
+
+  &__image-overlay {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    opacity: 0;
+
+    transition: opacity 0.4s;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: get-color(primary);
+    mix-blend-mode: color;
+  }
+
+  &__icon {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transition: opacity 0.4s;
+
+    width: 100%;
+    height: 100%;
+
+    @include media-query(sm) {
+      opacity: 0;
+    }
+  }
+
+  &__icon-image {
+    max-width: 50px;
+  }
+
+  &__caption {
+    margin-top: 12px;
+    margin-bottom: 8px;
+
+    font-size: font-size(14px);
+
+    @include media-query(sm) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    transition: color $transition-base;
+    color: get-color(text);
+  }
+}

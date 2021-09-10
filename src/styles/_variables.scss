@@ -1,0 +1,153 @@
+$breakpoints: (
+  sm: 640px,
+  md: 1024px,
+  lg: 1440px,
+);
+
+$root: 16px;
+
+$container-width: 1382px;
+$container-outer-width: 1800px;
+
+$gutter: 20px;
+$gutter-sm: 40px;
+
+$font-family-base: 'Lato', sans-serif;
+$font-family-heading: 'Lato', sans-serif;
+
+$font-weight-base: 400;
+$font-weight-base-bold: 700;
+$font-weight-heading: 700;
+
+$font-style-base: normal;
+$font-style-heading: normal;
+
+$line-height-base: 1.5;
+$line-height-heading: 1.2;
+$line-height-high: 1.77;
+
+$text-transform-base: initial;
+$text-transform-heading: initial;
+
+$letter-spacing-heading: 0px;
+
+$font-size-scale-base: 1;
+$font-size-scale-heading: 1;
+
+$font-size-base: font-size(16px);
+$font-size-small: font-size(14px);
+$font-size-medium: font-size(18px);
+
+$font-size-headings: (
+  h1: 2.5rem,
+  h2: 2rem,
+  h3: 1.5rem,
+  h4: 1.25rem,
+  h5: 1rem,
+  h6: 0.875rem,
+);
+
+$color-primary: #EC358B;
+$color-secondary: #35F9F9;
+$color-background: #FFF;
+$color-text: #504B4B;
+$color-secondary-text: #ffffff;
+
+$color-input: $color-text;
+
+$color-success: #4caf50;
+$color-error: #f44336;
+
+$colors: (
+  primary: $color-primary,
+  secondary: $color-secondary,
+  background: $color-background,
+  background-alternative: rgba($color-text, 0.05),
+  background-pale: rgba($color-text, 0.05),
+  text: $color-text,
+  text-bright: $color-text,
+  text-pale: rgba($color-text, 0.6),
+  text-pale2: rgba($color-text, 0.6),
+  secondary-text: $color-secondary-text,
+  link: $color-primary,
+  link-hover: rgba($color-primary, 0.8),
+  top-bar-background: $color-primary,
+  top-bar-text: #fff,
+  white: #fff,
+  black: #000,
+  success: $color-success,
+  error: $color-error,
+  heading: $color-primary,
+  header-background: #381177,
+  header-link: $color-secondary-text,
+  header-link-hover: $color-secondary-text,
+  mobile-menu-link: $color-secondary,
+  mobile-menu-link-hover: $color-secondary,
+  footer-text: #fff,
+  footer-link: #fff,
+  footer-link-hover: rgba(#fff, 0.8),
+  divider: rgba($color-text, 0.1),
+  image-background: rgba($color-text, 0.08),
+  image-badge-text: #666,
+  image-badge-background: #eaeaea,
+  input-text: $color-input,
+  input-background: rgba(0,0,0,0),
+  input-border: rgba($color-input, .14),
+  input-border-hover: rgba($color-input, .14),
+  input-border-focus: rgba($color-input, .14),
+  input-disabled-text: #d3d3d3,
+  input-disabled-background: #f7f7f7,
+  input-label: $color-input,
+  input-radio-border-selected: #381177,
+  input-radio-background-selected: #381177,
+  select-option: $color-background,
+  color-swatch-disabled-line: #6c6c6c,
+  modal-background: $color-background,
+  button-primary-text: $color-secondary-text,
+  button-primary-background:#FF00F5,
+  button-outline: #FF00F5,
+  button-disabled-text: rgba($color-text, 0.3),
+  button-disabled-background: rgba($color-text, 0.03),
+  card-shadow: rgba(0,0,0,0.2),
+  card-shadow-hover: rgba(0,0,0,0.4),
+
+  purple-custom: #381177,
+  gray-custom: #F7F7F7,
+  dark-gray-custom : #E1E1E1
+);
+
+$top-bar-vertical-padding: 16px;
+
+$header-height: 80px;
+$header-height-sm: 130px;
+
+$logo-max-width: 130px;
+
+$img-border-radius: 0px;
+$img-ratio-padding: 100%;
+
+// $img-ratio-padding: 125%;
+
+$gallery-img-ratio-padding: $img-ratio-padding;
+
+$button-border-radius: 40px;
+
+$input-border-width: 2px;
+$input-border-radius: 8px;
+$input-border: $input-border-width solid map-get($colors, 'input-border');
+$input-height: 40px;
+$input-horizontal-padding: 10px;
+$input-icon-width: 22px;
+$input-font-family: $font-family-base;
+$input-font-size: font-size(14px);
+$input-line-height: 1.5;
+
+$card-border-radius: 7px;
+
+$divider-size: 1px;
+$divider-style: solid;
+$divider-border: $divider-size $divider-style map-get($colors, 'divider');
+
+$transition-time: 200ms;
+$transition-base: $transition-time;
+$transition-all: all 200ms;

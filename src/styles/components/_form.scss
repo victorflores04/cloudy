@@ -1,0 +1,53 @@
+.form {
+  & > * + * {
+    margin-top: 20px;
+  }
+
+  &__section {
+    &--space-s {
+      margin-top: 8px;
+    }
+
+    &--search {
+      border-radius: $button-border-radius;
+      width: fit-content;
+      background-color: get-color(white);
+
+      .input-field {
+        border: none;
+      }
+    }
+  }
+
+  &__error {
+    display: none;
+    margin-top: 3px;
+    color: get-color(error);
+    font-size: $font-size-small;
+
+    &.visible {
+      display: block;
+    }
+  }
+
+  &__response-container {
+    margin-top: 0;
+  }
+
+  &__response {
+    display: none;
+    margin-top: 20px;
+
+    &.visible {
+      display: block;
+    }
+
+    &--success {
+      color: get-color(success);
+    }
+
+    &--error {
+      color: get-color(error);
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.collection-template {
+  &__wrapper {
+    @include media-query(sm) {
+      padding-left: 20px;
+    }
+  }
+
+  &__header {
+    text-align: center;
+  }
+
+  &__heading {
+    font-size: font-size-heading(43px);
+  }
+
+  &__grid {
+    margin-top: 24px;
+
+    @include media-query(md) {
+      margin-top: 48px;
+    }
+  }
+}

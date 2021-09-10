@@ -1,0 +1,20 @@
+.cart-totals {
+  font-weight: $font-weight-base-bold;
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    & > * {
+      flex: 1 1 auto;
+    }
+
+    & + & {
+      margin-top: 8px;
+    }
+  }
+
+  &__amount {
+    text-align: right;
+  }
+}

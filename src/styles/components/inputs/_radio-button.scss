@@ -1,0 +1,110 @@
+.radio-button {
+  $this: &;
+
+  position: relative;
+
+  height: $input-height;
+
+  color: get-color(input-text);
+  font-size: $input-font-size;
+  font-family: $input-font-family;
+
+  &__input {
+    display: none;
+
+    &:checked + #{$this}__label {
+      border-color: get-color(input-radio-border-selected);
+      background-color: get-color(input-radio-background-selected);
+      color: get-color(white);
+    }
+
+    &:disabled + #{$this}__label,
+    &.unavailable + #{$this}__label {
+      background-color: get-color(input-disabled-background);
+      color: get-color(input-disabled-text);
+    }
+  }
+
+  &__label {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    transition: background-color $transition-time, border-color $transition-time,
+      color $transition-time;
+
+    border: $input-border;
+    border-radius: $input-border-radius;
+
+    padding: 0 $input-horizontal-padding;
+
+    width: 100%;
+    height: 100%;
+
+    cursor: pointer;
+
+    background-color: get-color(input-background);
+
+    text-align: center;
+    font-weight: $font-weight-base-bold;
+    line-height: $line-height-base;
+
+    &:hover {
+      border-color: get-color(input-border-hover);
+    }
+
+    &.selected {
+      border-color: get-color(input-radio-border-selected);
+      background-color: get-color(input-radio-background-selected);
+      color: get-color(primary);
+
+      &> * {
+        color: get-color(primary);
+      }
+    }
+
+    &.disabled {
+      color: get-color(input-disabled-text);
+
+      &> * {
+        color: get-color(input-disabled-text);
+      }
+    }
+
+    &--chip {
+      background-color: rgba(255, 255, 255, 0.14);
+      border: none;
+
+      padding-right: 30px;
+
+      &:after{
+        content: "";
+        position: absolute;
+        display: block;
+        
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+
+        width: 100%;
+        height: 100%;
+
+        background: url("data:image/svg+xml;charset=utf-8,%3Csvg width='21' height='8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M.5 7.5l7-7m-7 0l7 7' stroke='%23fff' stroke-width='1.5' fill='none'/%3E%3C/svg%3E") 100%/21px 8px no-repeat;
+        
+      }
+    }
+  }
+
+  &--big {
+    height: 64px;
+    
+    #{$this}__label {
+      font-size: font-size(19px);
+      padding: 0 20px;
+    }
+  }
+}

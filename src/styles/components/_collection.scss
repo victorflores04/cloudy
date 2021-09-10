@@ -1,0 +1,16 @@
+.collection {
+  position: relative;
+  overflow: hidden;
+
+  &__inner {
+    position: relative;
+  }
+
+  &__grid {
+    margin-top: 40px;
+    
+    @include media-query(sm){
+      margin-top: 70px;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.search-results {
+  $this: &;
+
+  &__heading {
+    padding: 40px 0 25px 0;
+    h3 {
+      text-align: center;
+    }
+  }
+
+  &__text {
+    border: $input-border;
+    display: inline-block;
+    padding: 25px;
+    border-radius: $card-border-radius;
+    color: get-color(black);
+  }
+}

@@ -1,0 +1,95 @@
+.product-reviews {
+  .reviews-modal {
+    z-index: 2;
+  }
+
+  .reviews {
+    .fa {
+      font-size: 18px;
+    }
+
+    .reviews-header h1 {
+      color: get-color(text);
+    }
+
+
+    .button.yellow {
+      background-color: get-color(primary);
+      padding: 12px 24px;
+    }
+
+    .button.green {
+      background-color: get-color(white);
+      border: 2px solid get-color(purple-custom);
+
+      color: get-color(purple-custom);
+    }
+
+    .reviews-content {
+      padding: 25px 0;
+      input[type=radio]:checked+div .yellow:before {
+        background: get-color(primary);
+      }
+      input[type=radio]:checked+div .green:before {
+        background: get-color(purple-custom);
+      }
+    }
+    
+    .reviews-content_comments {
+      h1 {
+        color: get-color(text);
+      }
+
+      .reviews-button {
+        border-bottom: 2px solid;
+        padding: 10px;
+
+        .yellow {
+          color: get-color(primary);
+          border: none;
+          padding: 0;
+        }
+
+        .green {
+          color: get-color(purple-custom);
+          border: none;
+          padding: 0;
+        }
+      }
+
+      .review-article-photo .info {
+        .picture {
+          display: none;
+        }
+
+        .name,
+        .date,
+        .comment {
+          text-align: center;
+        }
+
+        .likes {
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+
+    .qualification.reviews-button:nth-child(even) {
+      border-color: get-color(primary);
+      margin-right: -5px;
+    }
+    .question.reviews-button:nth-child(even) {
+      border-color: get-color(purple-custom);
+      margin-left: -5px;
+    }
+
+  }
+
+  .reviews-content_qualification form{
+    border: 3px solid get-color(primary);
+  }
+  .reviews-content_question form{
+    border: 3px solid get-color(purple-custom);
+  }
+}

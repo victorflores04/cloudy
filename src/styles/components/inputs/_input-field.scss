@@ -1,0 +1,222 @@
+.input-field {
+  $this: &;
+
+  position: relative;
+
+  border: $input-border;
+  border-radius: $input-border-radius;
+
+  width: 100%;
+  min-width: 60px;
+  height: $input-height;
+
+  background-color: get-color(input-background);
+
+  font-family: $input-font-family;
+  font-size: font-size(16px);
+  line-height: $input-line-height;
+
+  @include media-query(sm) {
+    font-size: $input-font-size;
+  }
+
+  &:hover {
+    border-color: get-color(input-border-hover);
+  }
+
+  &:focus-within {
+    border-color: get-color(input-border-focus);
+  }
+
+  &__input {
+    @include autofill-fix(get-color(input-text));
+
+    display: block;
+
+    transition: color $transition-base;
+
+    -webkit-appearance: none;
+    outline: none;
+
+    border: 0;
+    padding: 0 $input-horizontal-padding;
+
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 100%;
+
+    background: transparent;
+
+    cursor: text;
+
+    color: get-color(input-text);
+    line-height: $input-line-height;
+
+    &:focus,
+    &.filled {
+      padding-top: 12px;
+
+      & + #{$this}__label,
+      & + * + #{$this}__label {
+        transform: translateY(-50%) translateY(-8px) scale(0.8);
+        color: get-color(text-pale);
+      }
+    }
+
+    &--bold {
+      font-weight: $font-weight-base-bold;
+    }
+
+    &::placeholder {
+      color: rgba(get-color(input-text), 0.8);
+      opacity: 1;
+    }
+  }
+
+  &__label {
+    position: absolute;
+
+    top: (($input-height / 2) - $input-border-width);
+    left: $input-horizontal-padding;
+
+    pointer-events: none;
+
+    transform: translateY(-50%);
+    transform-origin: left center;
+
+    transition: left $transition-base, transform $transition-base,
+      color $transition-base;
+
+    color: get-color(input-label);
+
+    &--bold {
+      font-weight: $font-weight-base-bold;
+    }
+  }
+
+  &__icon {
+    display: flex;
+
+    position: absolute;
+    z-index: 1;
+
+    top: -$input-border-width;
+    left: $input-horizontal-padding;
+
+    align-items: center;
+
+    transform: translateY(-1px);
+
+    width: $input-icon-width;
+    height: $input-height;
+  }
+
+  &__prefix {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: $input-horizontal-padding;
+
+    transform: translateY(-50%);
+
+    transition: transform $transition-base;
+  }
+
+  &__button {
+    align-self: center;
+    flex-shrink: 0;
+    padding-right: 6px;
+  }
+
+  &--inline-button {
+    display: flex;
+    border-radius: $button-border-radius;
+  }
+
+  &--textarea {
+    height: auto;
+
+    #{$this}__input {
+      position: relative;
+      height: 100px;
+      resize: vertical;
+
+      &:focus,
+      &.filled {
+        padding-top: 14px;
+      }
+    }
+  }
+
+  &--icon {
+    #{$this}__input {
+      padding-left: (2 * $input-horizontal-padding + $input-icon-width);
+    }
+
+    #{$this}__label {
+      left: (2 * $input-horizontal-padding + $input-icon-width);
+    }
+  }
+
+  &--prefix {
+    #{$this}__input {
+      padding-left: 18px;
+
+      &:focus,
+      &.filled {
+        & + #{$this}__prefix,
+        & + * + #{$this}__prefix {
+          display: block;
+          transform: translateY(-50%) translateY(6px);
+        }
+      }
+    }
+  }
+
+  &--base {
+    #{$this}__input {
+      padding-top: 0;
+
+      &:focus {
+        padding-top: 0;
+      }
+    }
+  }
+
+  &--quantity {
+    width: 60px;
+
+    #{$this}__input {
+      &::outer-spin-button,
+      &::inner-spin-button {
+        appearance: none;
+        margin: 0;
+      }
+
+      &[type='number'] {
+        appearance: textfield;
+      }
+    }
+  }
+  &--no-top-border-radius {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  &--no-bottom-border-radius {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &--footer {
+    @include media-query(sm) {
+      width: 190px;
+    }
+  }
+
+  &.selected {
+    border-color: get-color(input-radio-border-selected);
+    background-color: get-color(input-radio-background-selected);
+  }
+}

@@ -1,0 +1,52 @@
+.section-background {
+  $this: &;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  &__image,
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  &__image {
+    display: flex;
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__overlay {
+    &--gradient-light {
+      background: linear-gradient(
+        146deg,
+        get-color(white) 0%,
+        rgba(get-color(white), 0) 64%
+      );
+      mix-blend-mode: overlay;
+    }
+  }
+
+  &--mask-gradient-top {
+    #{$this}__image,
+    #{$this}__overlay {
+      mask-image: linear-gradient(
+        0deg,
+        get-color(black) 78%,
+        rgba(get-color(black), 0) 100%
+      );
+    }
+  }
+}

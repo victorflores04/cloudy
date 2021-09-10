@@ -1,0 +1,99 @@
+.reviews {
+
+  &__image {
+    border-radius: 50%;
+  }
+
+  &__slider {
+    margin-top: 0;
+
+    @include media-query(sm) {
+      margin-top: 50px;
+    }
+  }
+
+  &__card {
+    height: 100%;
+  }
+
+  &__grid {
+    margin-top: 48px;
+  }
+
+  &__content {
+    max-width: 435px;
+    margin: -20px auto 30px;
+
+    @include media-query(sm) {
+      margin: auto;
+    }
+  }
+
+  &__subheading {
+    text-align: center;
+    font-size: font-size(14px);
+
+    @include media-query(sm) {
+      font-size: font-size(20px);
+    }
+  }
+
+
+  &__quotation-marks {
+    font-size: font-size(72px);
+    font-family: 'HeadlandOne', serif;
+    font-weight: 400;
+  }
+
+  &__title {
+    font-size: font-size(18px);
+    font-weight: 900;
+
+    line-height: 1.3;
+
+    @include media-query(sm) {
+      font-size: font-size(25px);
+    }
+  }
+
+  &__comment {
+    font-size: font-size(12px);
+    font-weight: 400;
+
+    @include media-query(sm) {
+      font-size: font-size(14px);
+    }
+  }
+
+  &__autor {
+    font-size: font-size(12px);
+    font-weight: 400;
+
+    @include media-query(sm) {
+      font-size: font-size(14px);
+    }
+  }
+
+  &__dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    & > * + * {
+      margin-left: 16.42px;
+    }
+  }
+
+  &__dot {
+    width: 16.42px;
+    height: 16.42px;
+    border-radius: 50%;
+
+    background-color: rgba(get-color(black), 0.4);
+
+    &.active,
+    &.tns-nav-active {
+      background-color: get-color(purple-custom);
+    }
+  }
+}

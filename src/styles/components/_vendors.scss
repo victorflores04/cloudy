@@ -1,0 +1,30 @@
+.vendors {
+  &__slider {
+    @include media-query(sm) {
+      margin-top: 70px;
+    }
+  }
+
+  &__dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+
+    & > * + * {
+      margin-left: 16.42px;
+    }
+  }
+
+  &__dot {
+    width: 16.42px;
+    height: 16.42px;
+    border-radius: 50%;
+
+    background-color: rgba(get-color(black), 0.4);
+
+    &.active,
+    &.tns-nav-active {
+      background-color: get-color(purple-custom);
+    }
+  }
+}
